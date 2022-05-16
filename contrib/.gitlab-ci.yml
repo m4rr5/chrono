@@ -33,7 +33,7 @@ stages:
   - mkdir -p build
 # Make flatbuffers
   - cd src/chrono_thirdparty/flatbuffers
-  - cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release .
+  - cmake . -D FLATBUFFERS_CXX_FLAGS="-Wno-error" -G "Ninja" -DCMAKE_BUILD_TYPE=Release
   - ninja -j 8
   - cd $CI_PROJECT_DIR
 
